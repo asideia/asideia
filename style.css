@@ -1,0 +1,225 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variáveis e Estilos Globais - CLARO (Padrão) */
+:root {
+    --primary-color: #d92323; /* Azul primário */
+    --secondary-color: #6c757d; /* Cinza secundário */
+    --text-color: #343a40; /* Texto escuro padrão */
+    --bg-color: #ffffff; /* Fundo claro padrão */
+    --border-color: #dee2e6;
+    --highlight-bg: #f8f9fa; /* Fundo para destaques/blockquote */
+    --toggle-color: #343a40; /* Cor do botão para o modo claro */
+}
+
+/* Estilos para o MODO ESCURO (Acionado pela classe 'dark-mode' no <body> via JS) */
+body.dark-mode {
+    --text-color: #f8f9fa; /* Texto claro no dark mode */
+    --bg-color: #212529; /* Fundo escuro padrão */
+    --highlight-bg: #343a40; 
+    --border-color: #495057;
+    --toggle-color: #f8f9fa; /* Cor do botão para o modo escuro */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s; /* Transição suave */
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ------------------------------------- */
+/* Estilo do Botão de Alternância de Modo */
+/* ------------------------------------- */
+
+.mode-toggle {
+    position: fixed; /* Fixa o botão na tela */
+    top: 20px;
+    right: 20px;
+    background: var(--highlight-bg); /* Usa a cor de destaque como fundo */
+    color: var(--toggle-color);
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+    font-size: 1.2rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s, border-color 0.3s;
+}
+
+.mode-toggle:hover {
+    opacity: 0.8;
+}
+
+/* Estilo do Cabeçalho e Hero Section */
+.hero-section {
+    padding: 40px 0 20px 0;
+    text-align: center;
+}
+
+.logo-image {
+    max-width: 180px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.hero-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.tagline {
+    font-style: italic;
+    color: var(--secondary-color);
+}
+
+/* Estilos de Conteúdo Geral */
+h2 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    /* Usa a cor da borda que muda com o tema */
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 5px;
+}
+
+section {
+    padding: 20px 0;
+}
+
+hr {
+    border: none;
+    /* Usa a cor da borda que muda com o tema */
+    border-top: 1px solid var(--border-color);
+    margin: 20px 0;
+}
+
+/* Estilo do Blockquote (Destaque) */
+.highlight-box, .quote-box {
+    background-color: var(--highlight-bg); /* Fundo que muda com o tema */
+    border-left: 5px solid var(--primary-color);
+    padding: 15px;
+    margin: 15px 0;
+    font-style: italic;
+}
+
+.quote-box .author {
+    margin-top: 10px;
+    display: block;
+    text-align: right;
+    font-style: normal;
+    font-weight: 700;
+}
+
+/* Estilo da Tabela */
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    /* Usa a cor da borda que muda com o tema */
+    border-bottom: 1px solid var(--border-color);
+}
+
+thead th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 700;
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--highlight-bg); /* Fundo listrado que muda com o tema */
+}
+
+/* Estilo da Lista de Interação (Call to Action) */
+.interaction-guide ol {
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
+.interaction-guide li {
+    margin-bottom: 10px;
+    padding-left: 5px;
+}
+
+/* ------------------------------------- */
+/* Estilos da Seção de Links de Contato */
+/* ------------------------------------- */
+
+.contact-links-section {
+    padding: 30px 0;
+    text-align: center;
+    /* Linha divisória suave */
+    border-top: 1px solid var(--border-color); 
+}
+
+.contact-links-section h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Garante que os links quebrem a linha em telas pequenas */
+}
+
+.social-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    background-color: var(--highlight-bg);
+    border: 1px solid var(--border-color);
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    font-weight: 700;
+    white-space: nowrap; /* Evita que o texto quebre dentro do link */
+}
+
+.social-links a:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    transform: translateY(-2px); /* Efeito sutil ao passar o mouse */
+    border-color: var(--primary-color);
+}
+
+/* Estilo do Rodapé */
+.site-footer {
+    padding: 20px 0;
+    /* Usa a cor da borda que muda com o tema */
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+.site-footer p {
+    margin: 5px 0;
+}
