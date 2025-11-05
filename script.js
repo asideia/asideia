@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const logoImg = document.getElementById('logo-img'); 
     
     // URLs das imagens
-    const LOGO_LIGHT = 'https://github.com/asideia/.github/blob/main/statics/logo-with-name.png?raw=true';
-    const LOGO_DARK = 'https://github.com/asideia/.github/blob/main/statics/logo-with-name-dark.png?raw=true';
+    const LOGO_LIGHT = 'https://github.com/asideia/asideia/blob/main/statics/logo-with-name-white.png?raw=true';
+    const LOGO_DARK = 'https://github.com/asideia/asideia/blob/main/statics/logo-with-name-dark.png?raw=true';
 
     // 1. CHAVE DO LOCAL STORAGE para persistência do tema
     const STORAGE_KEY = 'asideia-theme';
@@ -22,14 +22,14 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleIcon.textContent = '☀️'; // Sol para indicar que pode mudar para claro
             // Lógica de troca do logo
             if (logoImg) {
-                logoImg.src = LOGO_DARK;
+                logoImg.src = LOGO_LIGHT;
             }
         } else {
             body.classList.remove('dark-mode');
             toggleIcon.textContent = '🌙'; // Lua para indicar que pode mudar para escuro
             // Lógica de troca do logo
             if (logoImg) {
-                logoImg.src = LOGO_LIGHT;
+                logoImg.src = LOGO_DARK;
             }
         }
     }
